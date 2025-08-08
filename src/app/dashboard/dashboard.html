@@ -1,0 +1,18 @@
+<div class="dashboard-container">
+  <h1>Welcome to Your Dashboard</h1>
+  <p>Select a module to get started</p>
+
+  <div class="modules-grid">
+    <div
+      class="module-card"
+      *ngFor="let mod of modules"
+      (click)="navigateTo(mod.route)"
+      tabindex="0"
+      role="button"
+      [attr.aria-label]="'Go to ' + mod.name">
+      <div class="icon">{{ mod.icon }}</div>
+      <h3>{{ mod.name }}</h3>
+      <p>{{ mod.description }}</p>
+    </div>
+  </div>
+</div>

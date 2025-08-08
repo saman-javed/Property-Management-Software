@@ -1,0 +1,48 @@
+<div class="card">
+  <h2>Buyer Ledger Report</h2>
+
+  <form [formGroup]="form" (ngSubmit)="runReport()" class="grid">
+    <div class="form-group">
+      <label>Buyer ID</label>
+      <input type="number" formControlName="buyerId" />
+    </div>
+    <div class="form-group">
+      <label>From</label>
+      <input type="date" formControlName="from" />
+    </div>
+    <div class="form-group">
+      <label>To</label>
+      <input type="date" formControlName="to" />
+    </div>
+    <div class="actions">
+      <button type="submit" [disabled]="form.invalid">Run Report</button>
+    </div>
+  </form>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Debit</th>
+          <th>Credit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of rows">
+          <td>{{ r.date }}</td>
+          <td>{{ r.description }}</td>
+          <td>{{ r.debit | currency:'PKR' }}</td>
+          <td>{{ r.credit | currency:'PKR' }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3"><strong>Balance</strong></td>
+          <td><strong>{{ balance | currency:'PKR' }}</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

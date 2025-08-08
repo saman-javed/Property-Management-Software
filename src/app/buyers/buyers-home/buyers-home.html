@@ -1,0 +1,31 @@
+<div class="wrap">
+  <aside class="menu">
+    <div class="menu-header">
+      <div class="menu-title">
+        <span class="emoji">👥</span>
+        <div>
+          <h3>Buyers & Installments</h3>
+          <p>Quick actions & reports</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="menu-list">
+      <a *ngFor="let m of menu"
+         [routerLink]="m.path"
+         routerLinkActive="active"
+         class="menu-item">
+        <span class="item-icon">{{ m.icon }}</span>
+        <span class="item-text">
+          <strong>{{ m.label }}</strong>
+          <small>{{ m.desc }}</small>
+        </span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <!-- Selected form renders here -->
+    <router-outlet></router-outlet>
+  </main>
+</div>
