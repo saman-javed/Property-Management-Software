@@ -1,1 +1,15 @@
-<p>installment-details works!</p>
+<div class="details-container">
+  <h2>Installment Details</h2>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngFor="let i of installments">
+      <td>{{ i.date }}</td>
+      <td>{{ i.amount | currency }}</td>
+      <td>{{ i.status }}</td>
+    </tr>
+  </table>
+</div>

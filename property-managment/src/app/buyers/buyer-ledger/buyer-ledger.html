@@ -1,1 +1,15 @@
-<p>buyer-ledger works!</p>
+<div class="ledger-container">
+  <h2>Buyer Ledger</h2>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Amount</th>
+    </tr>
+    <tr *ngFor="let l of ledger">
+      <td>{{ l.date }}</td>
+      <td>{{ l.description }}</td>
+      <td>{{ l.amount | currency }}</td>
+    </tr>
+  </table>
+</div>
