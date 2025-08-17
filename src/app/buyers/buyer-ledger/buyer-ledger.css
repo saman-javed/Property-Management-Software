@@ -1,7 +1,0 @@
-.ledger-container { max-width: 800px; margin: 24px auto; }
-h2 { margin-bottom: 12px; }
-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #dad9d9; }
-th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
-th { background: #f7f7f7; }
-tr:nth-child(even) td { background: #fcfcfc; }
-tr:hover td { background: #fafafa; }
