@@ -1,0 +1,59 @@
+<div class="form-container">
+  <div class="form-header">
+    <h2>Add Dealer</h2>
+  </div>
+
+  <div class="form-body">
+    <form [formGroup]="dealerForm" (ngSubmit)="onSubmit()" class="grid" novalidate>
+      <div class="form-group">
+        <label for="name">Dealer Name <span class="required">*</span></label>
+        <input id="name" formControlName="name" placeholder="Enter full name" />
+        <div class="error" *ngIf="dealerForm.get('name')?.touched && dealerForm.get('name')?.invalid">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone <span class="required">*</span></label>
+        <input id="phone" formControlName="phone" type="tel" placeholder="03XXXXXXXXX" />
+        <div class="error" *ngIf="dealerForm.get('phone')?.touched && dealerForm.get('phone')?.invalid">
+          Phone is required and must be 10-15 digits.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cnic">CNIC</label>
+        <input id="cnic" formControlName="cnic" placeholder="13 digits" />
+        <div class="error" *ngIf="dealerForm.get('cnic')?.touched && dealerForm.get('cnic')?.invalid">
+          CNIC must be exactly 13 digits.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" placeholder="email@domain.com" />
+        <div class="error" *ngIf="dealerForm.get('email')?.touched && dealerForm.get('email')?.invalid">
+          Please enter a valid email address.
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <label for="address">Address</label>
+        <input id="address" formControlName="address" placeholder="Street, City" />
+      </div>
+
+      <div class="form-group">
+        <label for="commissionRate">Commission % <span class="required">*</span></label>
+        <input id="commissionRate" formControlName="commissionRate" type="number" min="0" max="100" />
+        <div class="helper">Default 5%</div>
+        <div class="error" *ngIf="dealerForm.get('commissionRate')?.touched && dealerForm.get('commissionRate')?.invalid">
+          Commission rate must be between 0 and 100.
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" [disabled]="dealerForm.invalid">Save Dealer</button>
+      </div>
+    </form>
+  </div>
+</div>
