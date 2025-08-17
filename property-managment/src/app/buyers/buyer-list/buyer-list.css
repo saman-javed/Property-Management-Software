@@ -1,6 +1,0 @@
-.list-container { max-width: 700px; margin: auto; }
-.search-bar { display: flex; gap: 10px; margin-bottom: 15px; }
-input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-button { padding: 8px 15px; border: none; background: #007bff; color: white; border-radius: 4px; }
-table { width: 100%; border-collapse: collapse; }
-th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
