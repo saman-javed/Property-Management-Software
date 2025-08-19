@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# AUTH_USER_MODEL = 'reports.CustomUser'
 
 # Application definition
 
@@ -40,6 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'buyers',  
     'corsheaders',
+    'dealer',
+    'offices', 
+    'towns',
+    'report'
 ]
 
 MIDDLEWARE = [
@@ -81,7 +86,7 @@ WSGI_APPLICATION = 'backend_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'my_db',  # your database name
+        'NAME': 'property-management-db',  # your database name
         'USER': '',        # leave empty for Windows Authentication
         'PASSWORD': '',    # leave empty for Windows Authentication
         'HOST': 'localhost',
@@ -123,6 +128,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
